@@ -5,13 +5,13 @@ metadata:
 spec:
   displayName: Zed
   author:
-    name: Zane Liu
+    name: ZaneLiu
     website: "https://zaneliu.me"
   description: 一个 Halo 的赛博朋克主题，基于 SolidJS 构建。
-  logo: "/themes/zed/static/images/logo.svg"
-  website: "https://zaneliu.me"
+  logo: /themes/zed/static/images/logo.svg
+  website: https://zaneliu.me
   repo: "https://github.com/ZaneL1u/theme-zed"
-  settingName: "theme-zed-setting"
-  configMapName: "theme-zed-configMap"
-  version: "1.0"
+  settingName: theme-zed-setting
+  configMapName: theme-zed-configMap
+  version: 0.0.1
   require: ">=2.1.0"

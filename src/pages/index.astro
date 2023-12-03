@@ -2,7 +2,6 @@
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import PostCard from "../components/PostCard.vue"
-import { postFinder } from "../utils/postFinder.js"
 ---
 
 <Layout title="Welcome to Astro.">
@@ -21,15 +20,6 @@ import { postFinder } from "../utils/postFinder.js"
         body="Explore a galaxy of community-built starter themes." />
       <Card href="https://astro.build/chat/" title="Chat" body="Come say hi to our amazing Discord community. ❤️" />
     </ul>
-    <ul class="list-decimal list-inside">
-      <li th:text="#{foo}"></li>
-      <li th:text="#{bar}"></li>
-      <li th:text="#{hello('Ryan Wang')}"></li>
-    </ul>
-    <PostCard client:visible />
-    <p th:each="post : ${postFinder.list(1, 10)}">
-      <span th:text="${post.name}">Onions</span>
-    </p>
   </main>
 </Layout>
 
