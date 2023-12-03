@@ -1,11 +1,17 @@
 import { defineConfig } from "astro/config";
 import vue from "@astrojs/vue";
-import tailwind from "@astrojs/tailwind";
+import Unocss from "unocss/astro";
 import astroHaloThemeIntegration from "@halo-dev/astro-halo-theme-integration";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [vue(), tailwind(), astroHaloThemeIntegration()],
+  integrations: [
+    vue(),
+    Unocss({
+      injectReset: true, // or a path to the reset file
+    }),
+    astroHaloThemeIntegration(),
+  ],
   outDir: "./templates",
   build: {
     format: "file",

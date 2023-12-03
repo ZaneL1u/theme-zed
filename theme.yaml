@@ -1,17 +1,17 @@
 apiVersion: theme.halo.run/v1alpha1
 kind: Theme
-spec:
-  displayName: Astro Starter
-  author:
-    name: Halo OSS Organization
-    website: "https://halo.run"
-  description: Halo 2.0 Theme base on Astro and Thymeleaf
-  logo: "https://halo.run/logo"
-  website: "https://halo.run"
-  repo: "https://github.com/halo-sigs/theme-astro-starter"
-  settingName: "theme-astro-starter-setting"
-  configMapName: "theme-astro-starter-configMap"
-  version: "1.0"
-  require: "*"
 metadata:
-  name: theme-astro-starter
+  name: theme-zed
+spec:
+  displayName: Zed
+  author:
+    name: Zane Liu
+    website: "https://zaneliu.me"
+  description: 一个 Halo 的赛博朋克主题，基于 SolidJS 构建。
+  logo: "/themes/zed/static/images/logo.svg"
+  website: "https://zaneliu.me"
+  repo: "https://github.com/ZaneL1u/theme-zed"
+  settingName: "theme-zed-setting"
+  configMapName: "theme-zed-configMap"
+  version: "1.0"
+  require: ">=2.1.0"
