@@ -19,10 +19,10 @@ spec:
           name: sidebar_width
           label: 侧边栏宽度
           options:
-            '20': 20%
-            '30': 30%
-            '40': 40%
-            '50': 50%
+            "20": 20%
+            "30": 30%
+            "40": 40%
+            "50": 50%
         - $formkit: text
           name: sidebar_background
           label: 侧边栏背景图
