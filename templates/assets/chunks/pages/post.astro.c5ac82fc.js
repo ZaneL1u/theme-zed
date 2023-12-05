@@ -1,17 +1,11 @@
-/* empty css                          */import { c as createAstro, a as createComponent, r as renderTemplate, b as renderHead, d as renderSlot, e as renderComponent, m as maybeRenderHead } from '../astro.ccad35f2.js';
+/* empty css                          */import { c as createAstro, a as createComponent, r as renderTemplate, d as renderComponent, m as maybeRenderHead } from '../astro.88aeb453.js';
 import 'html-escaper';
 import 'clsx';
+import { $ as $$Layout } from './index.astro.858283e6.js';
 import { useSSRContext, defineComponent, ref, mergeProps, withCtx, createVNode } from 'vue';
 import { TransitionRoot } from '@headlessui/vue';
 import { ssrRenderAttrs, ssrRenderComponent } from 'vue/server-renderer';
-/* empty css                          */
-const $$Astro$1 = createAstro();
-const $$Layout = createComponent(async ($$result, $$props, $$slots) => {
-  const Astro2 = $$result.createAstro($$Astro$1, $$props, $$slots);
-  Astro2.self = $$Layout;
-  const { title } = Astro2.props;
-  return renderTemplate`<html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><title>${title}</title>${renderHead()}</head> <body> <div class="flex justify-between"> <nav class="flex gap-3"> <a href="/" th:href="@{/}">Home</a> <a href="/post" th:href="@{/post}">Post</a> <a href="/links" th:href="@{/links}">Links</a> </nav> <div> <a href="/">默认</a> <a href="/?language=zh">中文</a> <a href="/?language=en">英文</a> </div> </div> ${renderSlot($$result, $$slots["default"])} </body></html>`;
-}, "/Users/yorkshire/halo2-dev/themes/theme-zed/src/layouts/Layout.astro", void 0);
+import dayjs from 'dayjs';
 
 const _export_sfc = (sfc, props) => {
   const target = sfc.__vccOpts || sfc;
@@ -74,20 +68,14 @@ _sfc_main.setup = (props, ctx) => {
 const PostCard = /* @__PURE__ */ _export_sfc(_sfc_main, [["ssrRender", _sfc_ssrRender]]);
 
 const $$Astro = createAstro();
-const $$Index = createComponent(async ($$result, $$props, $$slots) => {
+const $$Post = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
-  Astro2.self = $$Index;
-  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Welcome to Astro111.", "data-astro-cid-j7pv25f6": true }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<main data-astro-cid-j7pv25f6> <ul class="list-decimal list-inside" data-astro-cid-j7pv25f6> <li th:text="#{foo}" data-astro-cid-j7pv25f6></li> <li th:text="#{bar}" data-astro-cid-j7pv25f6></li> </ul> <span th:utext="\${singlePageFinder.getByName(theme.config.about.singlePage).content.content}" data-astro-cid-j7pv25f6></span> ${renderComponent($$result2, "PostCard", PostCard, { "client:visible": true, "client:component-hydration": "visible", "client:component-path": "/Users/yorkshire/halo2-dev/themes/theme-zed/src/components/PostCard.vue", "client:component-export": "default", "data-astro-cid-j7pv25f6": true })} <li th:each="post : \${singlePageFinder.list(1,10)}" data-astro-cid-j7pv25f6> <a th:text="\${post.spec.title}" th:href="\${post.status.permalink}" data-astro-cid-j7pv25f6></a> </li> <ul th:text="\${theme.config.about.singlePage}" data-astro-cid-j7pv25f6> <!-- do something --> </ul> </main> ` })} `;
-}, "/Users/yorkshire/halo2-dev/themes/theme-zed/src/pages/index.astro", void 0);
+  Astro2.self = $$Post;
+  const now = dayjs();
+  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Welcome to Post Page." }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<time>${now}</time> <main> ${renderComponent($$result2, "PostCard", PostCard, { "client:visible": true, "client:component-hydration": "visible", "client:component-path": "/home/zaneliu/halo2-dev/themes/theme-zed/src/components/PostCard.vue", "client:component-export": "default" })} </main> ` })}`;
+}, "/home/zaneliu/halo2-dev/themes/theme-zed/src/pages/post.astro", void 0);
 
-const $$file = "/Users/yorkshire/halo2-dev/themes/theme-zed/src/pages/index.astro";
-const $$url = "";
+const $$file = "/home/zaneliu/halo2-dev/themes/theme-zed/src/pages/post.astro";
+const $$url = "/post.html";
 
-const index = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
-  __proto__: null,
-  default: $$Index,
-  file: $$file,
-  url: $$url
-}, Symbol.toStringTag, { value: 'Module' }));
-
-export { $$Layout as $, PostCard as P, index as i };
+export { $$Post as default, $$file as file, $$url as url };

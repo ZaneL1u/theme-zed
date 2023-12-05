@@ -1,3 +1,14 @@
+<script lang="ts" setup>
+const dark = useDark();
+const toggle = useToggle(dark);
+</script>
+
 <template>
-  <div class="i-material-symbols-dark-mode"></div>
+  <div
+    :key="dark ? 'dark' : 'light'"
+    @click="toggle()"
+    :class="
+      dark ? 'i-material-symbols-dark-mode' : 'i-material-symbols-light-mode'
+    "
+  />
 </template>

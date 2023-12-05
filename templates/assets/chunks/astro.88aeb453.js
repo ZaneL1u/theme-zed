@@ -1330,4 +1330,4 @@ function normalizeProps(props) {
   return props;
 }
 
-export { createComponent as a, renderHead as b, createAstro as c, renderSlot as d, renderComponent as e, addAttribute as f, maybeRenderHead as m, renderTemplate as r };
+export { createComponent as a, renderHead as b, createAstro as c, renderComponent as d, renderSlot as e, addAttribute as f, maybeRenderHead as m, renderTemplate as r };

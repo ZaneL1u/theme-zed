@@ -1,6 +1,6 @@
-/* empty css                          */import { c as createAstro, a as createComponent, r as renderTemplate, e as renderComponent, m as maybeRenderHead, f as addAttribute } from '../astro.ccad35f2.js';
+/* empty css                          */import { c as createAstro, a as createComponent, r as renderTemplate, d as renderComponent, m as maybeRenderHead, f as addAttribute } from '../astro.88aeb453.js';
 import 'html-escaper';
-import { $ as $$Layout } from './index.astro.bc06dda9.js';
+import { $ as $$Layout } from './index.astro.858283e6.js';
 /* empty css                          */
 const $$Astro = createAstro();
 const $$Links = createComponent(async ($$result, $$props, $$slots) => {
@@ -45,9 +45,9 @@ const $$Links = createComponent(async ($$result, $$props, $$slots) => {
     }
   ];
   return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Links", "data-astro-cid-au7rboj5": true }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<main data-astro-cid-au7rboj5> <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2" data-astro-cid-au7rboj5> ${links.map((data) => renderTemplate`<a${addAttribute(data.url, "href")} th:href="#{data.url}" target="_blank" data-astro-cid-au7rboj5> <div class="relative rounded border border-gray-300 bg-white px-5 py-4 shadow-sm hover:shadow flex items-center space-x-3 hover:border-gray-400" data-astro-cid-au7rboj5> <div class="flex-shrink-0" data-astro-cid-au7rboj5> <img class="h-12 w-12 rounded-full" th:src="#{data.logo}" th:alt="#{data.name}"${addAttribute(data.logo, "src")}${addAttribute(data.name, "alt")} data-astro-cid-au7rboj5> </div> <div class="flex-1 min-w-0" data-astro-cid-au7rboj5> <div data-astro-cid-au7rboj5> <p class="text-sm font-medium text-gray-900 truncate" th:text="#{data.name}" data-astro-cid-au7rboj5>${data.name}</p> <p class="text-sm text-gray-500 truncate" th:text="#{data.description}" data-astro-cid-au7rboj5>${data.description}</p> </div> </div> </div> </a>`)} </div> </main> ` })} `;
-}, "/Users/yorkshire/halo2-dev/themes/theme-zed/src/pages/links.astro", void 0);
+}, "/home/zaneliu/halo2-dev/themes/theme-zed/src/pages/links.astro", void 0);
 
-const $$file = "/Users/yorkshire/halo2-dev/themes/theme-zed/src/pages/links.astro";
+const $$file = "/home/zaneliu/halo2-dev/themes/theme-zed/src/pages/links.astro";
 const $$url = "/links.html";
 
 export { $$Links as default, $$file as file, $$url as url };

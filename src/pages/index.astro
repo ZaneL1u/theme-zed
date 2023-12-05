@@ -6,19 +6,13 @@ import PostCard from "../components/PostCard.vue";
 
 <Layout title="Welcome to Astro111.">
   <main>
-    <ul class="list-decimal list-inside">
-      <li th:text="#{foo}"></li>
-      <li th:text="#{bar}"></li>
-    </ul>
+    <div class="text-8xl text-white text-center my-20 nhd">ZANE</div>
 
+    <!-- 我的信息 -->
     <span
+      class="prose prose-lg text-white"
       th:utext="${singlePageFinder.getByName(theme.config.about.singlePage).content.content}"
     ></span>
-
-    <PostCard client:visible />
-    <li th:each="post : ${singlePageFinder.list(1,10)}">
-      <a th:text="${post.spec.title}" th:href="${post.status.permalink}"> </a>
-    </li>
 
     <ul th:text="${theme.config.about.singlePage}">
       <!-- do something -->
@@ -33,6 +27,20 @@ import PostCard from "../components/PostCard.vue";
 
   h1 {
     margin: 2rem 0;
+  }
+
+  .nhd {
+    font-family: "Monaspace Krypton", sans-serif;
+    font-weight: bold;
+    letter-spacing: 0.42em;
+    text-indent: 0.42em;
+    text-shadow:
+      0 0 10px #fff,
+      0 0 20px #fff,
+      0 0 40px #fff,
+      0 0 80px #fff,
+      0 0 120px #fff,
+      0 0 160px #fff;
   }
 
   main {
