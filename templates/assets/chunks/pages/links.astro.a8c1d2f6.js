@@ -1,6 +1,6 @@
 /* empty css                          */import { c as createAstro, a as createComponent, r as renderTemplate, e as renderComponent, m as maybeRenderHead, f as addAttribute } from '../astro.ccad35f2.js';
 import 'html-escaper';
-import { $ as $$Layout } from './index.astro.f4da7495.js';
+import { $ as $$Layout } from './index.astro.bc06dda9.js';
 /* empty css                          */
 const $$Astro = createAstro();
 const $$Links = createComponent(async ($$result, $$props, $$slots) => {

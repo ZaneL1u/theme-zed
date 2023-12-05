@@ -22,12 +22,24 @@ devDependencies:
   '@halo-dev/astro-halo-theme-integration':
     specifier: ^0.0.1
     version: 0.0.1
+  '@iconify-json/material-symbols':
+    specifier: ^1.1.65
+    version: 1.1.65
   '@rushstack/eslint-patch':
     specifier: ^1.6.0
     version: 1.6.0
   '@types/node':
     specifier: ^20.10.3
     version: 20.10.3
+  '@unocss/preset-attributify':
+    specifier: ^0.58.0
+    version: 0.58.0
+  '@unocss/preset-icons':
+    specifier: ^0.58.0
+    version: 0.58.0
+  '@unocss/preset-typography':
+    specifier: ^0.58.0
+    version: 0.58.0
   '@unocss/reset':
     specifier: ^0.58.0
     version: 0.58.0
@@ -1064,6 +1076,12 @@ packages:
 
   /@humanwhocodes/object-schema@2.0.1:
     resolution: {integrity: sha512-dvuCeX5fC9dXgJn9t+X5atfmgQAzUOWqS1254Gh0m6i8wKd10ebXkfNKiRK+1GWi/yTvvLDHpoxLr0xxxeslWw==}
+    dev: true
+
+  /@iconify-json/material-symbols@1.1.65:
+    resolution: {integrity: sha512-QcJ7EcQsfgz3OEEXlUuLgnegqkXEhUKY6lfsxsPwPbhQHnKMRdeKwFrTZaQng1XIO5U+6rnwdW1vJBDIUQrfiA==}
+    dependencies:
+      '@iconify/types': 2.0.0
     dev: true
 
   /@iconify/types@2.0.0:
@@ -2471,6 +2489,7 @@ packages:
 
   /color-name@1.1.4:
     resolution: {integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==}
+    requiresBuild: true
     dev: true
 
   /color-string@1.9.1:

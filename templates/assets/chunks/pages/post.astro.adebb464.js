@@ -1,7 +1,7 @@
 /* empty css                          */import { c as createAstro, a as createComponent, r as renderTemplate, e as renderComponent, m as maybeRenderHead } from '../astro.ccad35f2.js';
 import 'html-escaper';
 import 'clsx';
-import { P as PostCard, $ as $$Layout } from './index.astro.f4da7495.js';
+import { P as PostCard, $ as $$Layout } from './index.astro.bc06dda9.js';
 import dayjs from 'dayjs';
 
 const $$Astro = createAstro();

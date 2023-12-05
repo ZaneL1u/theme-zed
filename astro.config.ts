@@ -8,13 +8,14 @@ export default defineConfig({
   integrations: [
     vue(),
     Unocss({
-      injectReset: true, // or a path to the reset file
+      injectReset: true,
     }),
     astroHaloThemeIntegration(),
   ],
   outDir: "./templates",
   build: {
     format: "file",
+    inlineStylesheets: "never",
   },
   server: {
     port: 4000,

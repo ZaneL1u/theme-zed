@@ -10,7 +10,7 @@ const $$Layout = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$1, $$props, $$slots);
   Astro2.self = $$Layout;
   const { title } = Astro2.props;
-  return renderTemplate`<html lang="en" data-astro-cid-sckkx6r4> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><title>${title}</title>${renderHead()}</head> <body data-astro-cid-sckkx6r4> <div class="flex justify-between" data-astro-cid-sckkx6r4> <nav class="flex gap-3" data-astro-cid-sckkx6r4> <a href="/" th:href="@{/}" data-astro-cid-sckkx6r4>Home</a> <a href="/post" th:href="@{/post}" data-astro-cid-sckkx6r4>Post</a> <a href="/links" th:href="@{/links}" data-astro-cid-sckkx6r4>Links</a> </nav> <div data-astro-cid-sckkx6r4> <a href="/" data-astro-cid-sckkx6r4>默认</a> <a href="/?language=zh" data-astro-cid-sckkx6r4>中文</a> <a href="/?language=en" data-astro-cid-sckkx6r4>英文</a> </div> </div> ${renderSlot($$result, $$slots["default"])} </body></html>`;
+  return renderTemplate`<html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><title>${title}</title>${renderHead()}</head> <body> <div class="flex justify-between"> <nav class="flex gap-3"> <a href="/" th:href="@{/}">Home</a> <a href="/post" th:href="@{/post}">Post</a> <a href="/links" th:href="@{/links}">Links</a> </nav> <div> <a href="/">默认</a> <a href="/?language=zh">中文</a> <a href="/?language=en">英文</a> </div> </div> ${renderSlot($$result, $$slots["default"])} </body></html>`;
 }, "/Users/yorkshire/halo2-dev/themes/theme-zed/src/layouts/Layout.astro", void 0);
 
 const _export_sfc = (sfc, props) => {
