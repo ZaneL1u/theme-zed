@@ -1,5 +1,5 @@
 ---
-import CyberBackground from "../components/layout/CyberBackground.vue";
+import CyberBackground from "../components/layout/background/CyberBackground.vue";
 import SwitchDark from "../components/layout/SwitchDark.vue";
 export interface Props {
   title: string;
@@ -16,11 +16,11 @@ const { title } = Astro.props as Props;
     <title>{title}</title>
   </head>
 
-  <body bg="white" dark="bg-#010400" transition="all">
+  <body bg="white" dark="bg-black" transition="all!">
     <CyberBackground client:only />
     <div class="flex justify-center text-white font-['Monaspace_Krypton']">
       <!-- 更改暗色模式 -->
-      <!-- <SwitchDark client:only /> -->
+      <SwitchDark client:only />
       <nav class="grid grid-cols-3 gap-8 mt-8 font-bold">
         <a href="/" th:href="@{/}">Home</a>
         <a href="/post" th:href="@{/post}">Post</a>

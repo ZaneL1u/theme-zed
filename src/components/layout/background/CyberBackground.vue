@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { drawBg } from "../../helper/cyber-background";
+import { drawBg } from "./CyberBackground";
 const wrapper = ref<HTMLElement | null>(null);
 
 const context = ref<HTMLCanvasElement | null>(null);
