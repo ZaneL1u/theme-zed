@@ -1,7 +1,7 @@
 /* empty css                          */import { c as createAstro, a as createComponent, r as renderTemplate, d as renderComponent, m as maybeRenderHead } from '../astro.88aeb453.js';
 import 'html-escaper';
 import 'clsx';
-import { $ as $$Layout } from './index.astro.858283e6.js';
+import { $ as $$Layout } from './index.astro.ea1ea36c.js';
 import { useSSRContext, defineComponent, ref, mergeProps, withCtx, createVNode } from 'vue';
 import { TransitionRoot } from '@headlessui/vue';
 import { ssrRenderAttrs, ssrRenderComponent } from 'vue/server-renderer';
@@ -72,10 +72,10 @@ const $$Post = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
   Astro2.self = $$Post;
   const now = dayjs();
-  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Welcome to Post Page." }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<time>${now}</time> <main> ${renderComponent($$result2, "PostCard", PostCard, { "client:visible": true, "client:component-hydration": "visible", "client:component-path": "/home/zaneliu/halo2-dev/themes/theme-zed/src/components/PostCard.vue", "client:component-export": "default" })} </main> ` })}`;
-}, "/home/zaneliu/halo2-dev/themes/theme-zed/src/pages/post.astro", void 0);
+  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Welcome to Post Page." }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<time>${now}</time> <main> ${renderComponent($$result2, "PostCard", PostCard, { "client:visible": true, "client:component-hydration": "visible", "client:component-path": "/Users/yorkshire/halo2-dev/themes/theme-zed/src/components/PostCard.vue", "client:component-export": "default" })} </main> ` })}`;
+}, "/Users/yorkshire/halo2-dev/themes/theme-zed/src/pages/post.astro", void 0);
 
-const $$file = "/home/zaneliu/halo2-dev/themes/theme-zed/src/pages/post.astro";
+const $$file = "/Users/yorkshire/halo2-dev/themes/theme-zed/src/pages/post.astro";
 const $$url = "/post.html";
 
 export { $$Post as default, $$file as file, $$url as url };

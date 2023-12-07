@@ -4,8 +4,18 @@ import Unocss from "unocss/astro";
 import astroHaloThemeIntegration from "@halo-dev/astro-halo-theme-integration";
 import AutoImport from "unplugin-auto-import/astro";
 
-// https://astro.build/config
 export default defineConfig({
+  outDir: "./templates",
+
+  build: {
+    format: "file",
+    inlineStylesheets: "never",
+  },
+
+  server: {
+    port: 4000,
+  },
+
   integrations: [
     vue(),
     AutoImport({
@@ -16,12 +26,9 @@ export default defineConfig({
     }),
     astroHaloThemeIntegration(),
   ],
-  outDir: "./templates",
-  build: {
-    format: "file",
-    inlineStylesheets: "never",
-  },
-  server: {
-    port: 4000,
+
+  i18n: {
+    defaultLocale: "zh",
+    locales: ["zh", "en"],
   },
 });
