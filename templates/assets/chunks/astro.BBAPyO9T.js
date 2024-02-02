@@ -1,5 +1,7 @@
+import 'kleur/colors';
 import { escape } from 'html-escaper';
 import { clsx } from 'clsx';
+import 'cssesc';
 
 const MissingMediaQueryDirective = {
   name: "MissingMediaQueryDirective",
@@ -15,7 +17,7 @@ ${validRenderersCount > 0 ? `There ${plural ? "are" : "is"} ${validRenderersCoun
 but ${plural ? "none were" : "it was not"} able to server-side render \`${componentName}\`.` : `No valid renderer was found ${componentExtension ? `for the \`.${componentExtension}\` file extension.` : `for this file extension.`}`}`,
   hint: (probableRenderers) => `Did you mean to enable the ${probableRenderers} integration?
 
-See https://docs.astro.build/en/core-concepts/framework-components/ for more information on how to install and configure integrations.`
+See https://docs.astro.build/en/guides/framework-components/ for more information on how to install and configure integrations.`
 };
 const NoClientEntrypoint = {
   name: "NoClientEntrypoint",
@@ -50,7 +52,8 @@ const AstroGlobUsedOutside = {
 const AstroGlobNoMatch = {
   name: "AstroGlobNoMatch",
   title: "Astro.glob() did not match any files.",
-  message: (globStr) => `\`Astro.glob(${globStr})\` did not return any matching files. Check the pattern for typos.`
+  message: (globStr) => `\`Astro.glob(${globStr})\` did not return any matching files.`,
+  hint: "Check the pattern for typos."
 };
 
 function normalizeLF(code) {
@@ -94,9 +97,9 @@ class AstroError extends Error {
   hint;
   frame;
   type = "AstroError";
-  constructor(props, ...params) {
-    super(...params);
+  constructor(props, options) {
     const { name, title, message, stack, location, hint, frame } = props;
+    super(message, options);
     this.title = title;
     this.name = name;
     if (message)
@@ -125,6 +128,8 @@ class AstroError extends Error {
     return err.type === "AstroError";
   }
 }
+
+const ASTRO_VERSION = "4.3.1";
 
 function validateArgs(args) {
   if (args.length !== 3)
@@ -161,8 +166,6 @@ function createComponent(arg1, moduleId, propagation) {
     return createComponentWithOptions(arg1);
   }
 }
-
-const ASTRO_VERSION = "3.6.4";
 
 function createAstroGlobFn() {
   const globHandler = (importMetaGlobResult) => {
@@ -556,7 +559,7 @@ const toIdent = (k) => k.trim().replace(/(?:(?!^)\b\w|\s+|[^\w]+)/g, (match, ind
 });
 const toAttributeString = (value, shouldEscape = true) => shouldEscape ? String(value).replace(/&/g, "&#38;").replace(/"/g, "&#34;") : value;
 const kebab = (k) => k.toLowerCase() === k ? k : k.replace(/[A-Z]/g, (match) => `-${match.toLowerCase()}`);
-const toStyleString = (obj) => Object.entries(obj).filter(([k, v]) => typeof v === "string" && v.trim() || typeof v === "number").map(([k, v]) => {
+const toStyleString = (obj) => Object.entries(obj).filter(([_, v]) => typeof v === "string" && v.trim() || typeof v === "number").map(([k, v]) => {
   if (k[0] !== "-" && k[1] !== "-")
     return `${kebab(k)}:${v}`;
   return `${k}:${v}`;
@@ -787,6 +790,15 @@ function stringifyChunk(result, chunk) {
           return "";
         }
         return renderAllHeadContent(result);
+      }
+      case "renderer-hydration-script": {
+        const { rendererSpecificHydrationScripts } = result._metadata;
+        const { rendererName } = instruction;
+        if (!rendererSpecificHydrationScripts.has(rendererName)) {
+          rendererSpecificHydrationScripts.add(rendererName);
+          return instruction.render();
+        }
+        return "";
       }
       default: {
         throw new Error(`Unknown chunk type: ${chunk.type}`);
@@ -1264,6 +1276,15 @@ ${serializeProps(
         }
       }
       destination.write(createRenderInstruction({ type: "directive", hydration }));
+      if (hydration.directive !== "only" && renderer?.ssr.renderHydrationScript) {
+        destination.write(
+          createRenderInstruction({
+            type: "renderer-hydration-script",
+            rendererName: renderer.name,
+            render: renderer.ssr.renderHydrationScript
+          })
+        );
+      }
       destination.write(markHTMLString(renderElement("astro-island", island, false)));
     }
   };

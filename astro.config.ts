@@ -1,7 +1,7 @@
 import { defineConfig } from "astro/config";
-import vue from "@astrojs/vue";
+import Vue from "@astrojs/vue";
 import Unocss from "unocss/astro";
-import astroHaloThemeIntegration from "@halo-dev/astro-halo-theme-integration";
+import AstroHaloThemeIntegration from "@halo-dev/astro-halo-theme-integration";
 import AutoImport from "unplugin-auto-import/astro";
 import Icons from "unplugin-icons/vite";
 
@@ -18,14 +18,14 @@ export default defineConfig({
   },
 
   integrations: [
-    vue(),
+    Vue(),
     AutoImport({
       imports: ["vue", "@vueuse/core"],
     }),
     Unocss({
       injectReset: true,
     }),
-    astroHaloThemeIntegration(),
+    AstroHaloThemeIntegration(),
   ],
 
   vite: {

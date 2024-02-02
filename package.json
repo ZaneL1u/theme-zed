@@ -3,14 +3,14 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "astro dev",
+    "dev": "astro dev --host",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.6.3",
-    "@astrojs/vue": "^3.0.4",
+    "@astrojs/vue": "^4.0.8",
     "@halo-dev/astro-halo-theme-integration": "^0.0.1",
     "@rushstack/eslint-patch": "^1.7.2",
     "@types/node": "^20.11.16",
@@ -21,7 +21,7 @@
     "@unocss/reset": "^0.58.4",
     "@vue/tsconfig": "^0.4.0",
     "@vueuse/core": "^10.7.2",
-    "astro": "^3.6.4",
+    "astro": "^4.3.1",
     "eslint": "^8.56.0",
     "prettier": "^3.2.4",
     "typescript": "^5.3.3",
