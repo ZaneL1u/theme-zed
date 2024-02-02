@@ -1,7 +1,7 @@
 /* empty css                          */import { c as createAstro, a as createComponent, r as renderTemplate, d as renderComponent, m as maybeRenderHead } from '../astro.88aeb453.js';
 import 'html-escaper';
 import 'clsx';
-import { $ as $$Layout } from './index.astro.ea1ea36c.js';
+import { $ as $$Layout } from './index.astro.1e0b05e4.js';
 import { useSSRContext, defineComponent, ref, mergeProps, withCtx, createVNode } from 'vue';
 import { TransitionRoot } from '@headlessui/vue';
 import { ssrRenderAttrs, ssrRenderComponent } from 'vue/server-renderer';

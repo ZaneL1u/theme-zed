@@ -3,6 +3,7 @@ import vue from "@astrojs/vue";
 import Unocss from "unocss/astro";
 import astroHaloThemeIntegration from "@halo-dev/astro-halo-theme-integration";
 import AutoImport from "unplugin-auto-import/astro";
+import Icons from "unplugin-icons/vite";
 
 export default defineConfig({
   outDir: "./templates",
@@ -26,6 +27,14 @@ export default defineConfig({
     }),
     astroHaloThemeIntegration(),
   ],
+
+  vite: {
+    plugins: [
+      Icons({
+        compiler: "astro",
+      }),
+    ],
+  },
 
   i18n: {
     defaultLocale: "zh",

@@ -1,5 +1,4 @@
 import { defineConfig, transformerDirectives } from "unocss";
-import presetIcons from "@unocss/preset-icons";
 import presetUno from "@unocss/preset-uno";
 import presetTagify from "@unocss/preset-tagify";
 import presetMini from "@unocss/preset-mini";
@@ -14,8 +13,5 @@ export default defineConfig({
     presetMini(),
     presetAttributify(),
     presetTypography(),
-    presetIcons({
-      autoInstall: true,
-    }),
   ],
 });
