@@ -4,9 +4,15 @@ metadata:
   name: theme-zed-setting
 spec:
   forms:
-    - group: about
-      label: 首页选项
+    - group: index
+      label: 首页设置
       formSchema:
+        - $formkit: text
+          name: name
+          label: 站点作者名
+          value: Hi
+          help: >-
+            会在首页高亮居中显示，推荐是你的名字或者昵称。
         - $formkit: singlePageSelect
           name: singlePage
           label: 简介
@@ -19,10 +25,10 @@ spec:
           name: sidebar_width
           label: 侧边栏宽度
           options:
-            "20": 20%
-            "30": 30%
-            "40": 40%
-            "50": 50%
+            '20': 20%
+            '30': 30%
+            '40': 40%
+            '50': 50%
         - $formkit: text
           name: sidebar_background
           label: 侧边栏背景图

@@ -2,21 +2,20 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Welcome to Astro111.">
+<!-- 网站标题 -->
+<Layout title="[[${site.title}]]">
   <main>
     <div class="text-8xl text-white text-center my-20 select-none nhd">
-      ZANE
+      {"[[${theme.config.index.name}]]"}
     </div>
 
     <!-- 我的信息 -->
     <span
-      class="prose prose-lg text-white"
-      th:utext="${singlePageFinder.getByName(theme.config.about.singlePage).content.content}"
+      class="prose text-white"
+      th:utext="${singlePageFinder.getByName(theme.config.index.singlePage).content.content}"
     ></span>
 
-    <ul th:text="${theme.config.about.singlePage}">
-      <!-- do something -->
-    </ul>
+    <ul th:text="${theme.config.about.singlePage}"></ul>
   </main>
 </Layout>
 
