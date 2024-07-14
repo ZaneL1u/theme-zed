@@ -8,7 +8,7 @@
     "dev": "astro dev --host",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "pnpm astro preview"
   },
   "dependencies": {
     "animate.css": "^4.1.1",

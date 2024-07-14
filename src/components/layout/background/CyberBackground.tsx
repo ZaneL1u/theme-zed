@@ -1,62 +1,42 @@
-import { createSignal } from 'solid-js'
+import { Show } from 'solid-js'
 import { drawBg } from './CyberBackground'
 
 export function CyberBackground() {
-  let context: HTMLCanvasElement
-  let wrapper: HTMLDivElement
+  const [context, setContext] = createSignal<HTMLCanvasElement>()
+  const [wrapper, setWrapper] = createSignal<HTMLElement>()
+  const [isMounted, setMounted] = createSignal(false)
+  const [size, setSize] = createSignal({ width: 0, height: 0 })
 
-  // const wrapper = createSignal<HTMLElement | null>(null)
+  onMount(() => {
+    setSize(wrapper().getBoundingClientRect())
 
-  // const context = createSignal<HTMLCanvasElement | null>(null)
+    console.log(size())
 
-  // onMounted(() => {
-  //   nextTick(() => {
-  //     if (wrapper.value && context.value) {
-  //       drawBg(context.value)
-  //     }
-  //   })
-  // })
+    setMounted(true)
+  })
 
-  // const isMounted = useMounted()
+  createEffect(() => {
+    const { width, height } = size()
+
+    if (context() && width && height)
+      drawBg(context())
+  })
 
   return (
     <>
-      <div ref={wrapper} />
-      <canvas
-      // v-if="isMounted"
-        ref={context}
-      />
+      <div
+        class="fixed inset-0 pointer-events-none print:hidden z--1 bg-black"
+        ref={setWrapper}
+      >
+        <Show when={isMounted()}>
+          <canvas
+            ref={setContext}
+            class="w-full h-full"
+            width={size().width}
+            height={size().height}
+          />
+        </Show>
+      </div>
     </>
   )
 }
-
-// <script lang="ts" setup>
-// import { drawBg } from "./CyberBackground";
-// const wrapper = ref<HTMLElement | null>(null);
-
-// const context = ref<HTMLCanvasElement | null>(null);
-
-// onMounted(() => {
-//   nextTick(() => {
-//     if (wrapper.value && context.value) {
-//       drawBg(context.value);
-//     }
-//   });
-// });
-
-// const isMounted = useMounted();
-// </script>
-
-// <template>
-//   <div
-//     class="fixed top-0 bottom-0 left-0 right-0 pointer-events-none print:hidden z--1"
-//     ref="wrapper"
-//   >
-//     <canvas
-//       v-if="isMounted"
-//       ref="context"
-//       :width="wrapper.clientWidth"
-//       :height="wrapper.clientHeight"
-//     ></canvas>
-//   </div>
-// </template>
